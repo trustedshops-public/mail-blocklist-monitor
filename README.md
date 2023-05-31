@@ -3,6 +3,7 @@ mail-blocklist-monitor
 [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/trustedshops-public/mail-blocklist-monitor/blob/main/LICENSE)
 [![pre-commit](https://img.shields.io/badge/%E2%9A%93%20%20pre--commit-enabled-success)](https://pre-commit.com/)
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/trustedshops-public/mail-blocklist-monitor/tree/main.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/trustedshops-public/mail-blocklist-monitor/tree/main)
+[![codecov](https://codecov.io/github/trustedshops-public/mail-blocklist-monitor/branch/main/graph/badge.svg?token=jqark7U82S)](https://codecov.io/github/trustedshops-public/mail-blocklist-monitor)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 Monitor the reputation of your mail server IPs with ease.
