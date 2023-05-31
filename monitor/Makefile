@@ -19,7 +19,7 @@ create-dist:
 	mkdir dist
 
 build: create-dist ## Build binary
-	GOOS=linux go build -o dist/monitor
+	GOOS=linux GOARCH=amd64 go build -o dist/monitor
 
 build-multiplatform: build ## Create binaries for all supported platforms
 	GOOS=linux GOARCH=amd64 go build -o dist/monitor-linux-amd64 && \
