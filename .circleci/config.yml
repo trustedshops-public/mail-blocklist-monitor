@@ -12,27 +12,27 @@ executors:
 jobs:
   test:
     executor: go
+    working_directory: ~/project/monitor
     steps:
       - checkout
+      - go/mod-download-cached
       - run:
           name: Run tests
           command: |
-            cd monitor/
             gotestsum --junitfile unit-tests.xml
             make save-coverage-report
       - run:
           name: Get test coverage
           command: |
-            cd monitor/
             go test -race -coverprofile=coverage.txt -covermode=atomic  -v ./...
             # TODO Enable codecov
             # bash <(curl -s https://codecov.io/bash)
       - store_test_results:
-          path: monitor/unit-tests.xml
+          path: unit-tests.xml
       - store_artifacts:
-          path: monitor/unit-tests.xml
+          path: unit-tests.xml
       - store_artifacts:
-          path: monitor/coverage.html
+          path: coverage.html
   build-monitor:
     executor: go
     steps:
