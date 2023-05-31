@@ -3,6 +3,7 @@ version: 2.1
 orbs:
   semantic-release: trustedshops-public/semantic-release@5.0.0
   go: circleci/go@1.7.3
+  codecov: codecov/codecov@3.2.5
 
 executors:
   go:
@@ -26,8 +27,7 @@ jobs:
           name: Get test coverage
           command: |
             go test -race -coverprofile=coverage.txt -covermode=atomic  -v ./...
-            # TODO Enable codecov
-            # bash <(curl -s https://codecov.io/bash)
+      - codecov/upload
       - store_test_results:
           path: unit-tests.xml
       - store_artifacts:
