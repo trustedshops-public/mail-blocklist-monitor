@@ -12,9 +12,10 @@ executors:
 jobs:
   test:
     executor: go
-    working_directory: ~/project/monitor/monitor/monitor
+    working_directory: ~/project/monitor
     steps:
-      - checkout
+      - checkout:
+          path: ..
       - go/mod-download-cached
       - run:
           name: Run tests
