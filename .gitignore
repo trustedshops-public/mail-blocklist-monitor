@@ -1,0 +1,6 @@
+.idea/
+dist/
+.aws-sam/
+monitor/unit-tests.xml
+monitor/coverage.html
+.terraform*

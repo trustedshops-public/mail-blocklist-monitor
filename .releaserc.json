@@ -1,0 +1,57 @@
+{
+  "branches": [
+    "master",
+    "main"
+  ],
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "conventionalcommits"
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "conventionalcommits"
+      }
+    ],
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "CHANGELOG.md",
+          "monitor/dist/monitor"
+        ]
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "path": "semantic-release",
+        "name": "trustedshops/terraform-mail-blocklist-monitor",
+        "assets": [
+          {
+            "path": "monitor/dist/monitor-linux-amd64"
+          },
+          {
+            "path": "monitor/dist/monitor-linux-arm"
+          },
+          {
+            "path": "monitor/dist/monitor-linux-arm64"
+          },
+          {
+            "path": "monitor/dist/monitor-linux-i386"
+          }
+        ]
+      }
+    ]
+  ],
+  "tagFormat": "${version}"
+}

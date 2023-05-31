@@ -1,0 +1,75 @@
+version: 2.1
+
+orbs:
+  semantic-release: trustedshops-public/semantic-release@5.0.0
+  go: circleci/go@1.7.3
+
+executors:
+  go:
+    docker:
+      - image: cimg/go:1.20
+
+jobs:
+  test:
+    executor: go
+    steps:
+      - checkout
+      - run:
+          name: Run tests
+          command: |
+            cd monitor/
+            gotestsum --junitfile unit-tests.xml
+            make save-coverage-report
+      - run:
+          name: Get test coverage
+          command: |
+            cd monitor/
+            go test -race -coverprofile=coverage.txt -covermode=atomic  -v ./...
+            # TODO Enable codecov
+            # bash <(curl -s https://codecov.io/bash)
+      - store_test_results:
+          path: monitor/unit-tests.xml
+      - store_artifacts:
+          path: monitor/unit-tests.xml
+      - store_artifacts:
+          path: monitor/coverage.html
+  build-monitor:
+    executor: go
+    steps:
+      - checkout
+      - run:
+          name: Build binary for module
+          command: |
+            cd monitor/
+            make build-multiplatform
+      - persist_to_workspace:
+          root: .
+          paths:
+            - monitor/dist/
+
+  semantic-release:
+    executor: semantic-release/default
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - semantic-release/install:
+          additional_packages: "@semantic-release/exec@6.0.3"
+      - semantic-release/execute
+
+workflows:
+  version: 2
+  continuous:
+    jobs:
+      - test
+      - build-monitor:
+          requires:
+            - test
+      - semantic-release:
+          context:
+            - github-release
+          requires:
+            - build-monitor
+          filters:
+            branches:
+              only: [ main ]

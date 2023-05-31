@@ -1,0 +1,15 @@
+@startuml
+
+start
+    if(running with aws_lambda environment) then(yes)
+        :Run AWS Lambda handler;
+    else (no)
+        :Run standalone function;
+    endif
+    :Build blocklist from contributors;
+    :Load IPs from providers;
+    :Check concurrent against blocklists;
+    :Run all exporters;
+stop
+
+@enduml

@@ -1,0 +1,63 @@
+fail_fast: true
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: detect-private-key
+      - id: check-symlinks
+      - id: check-vcs-permalinks
+      - id: trailing-whitespace
+        args:
+          - --markdown-linebreak-ext=md
+      - id: mixed-line-ending
+        args:
+          - --fix=lf
+      - id: check-case-conflict
+      - id: check-executables-have-shebangs
+      - id: check-toml
+      - id: check-xml
+      - id: fix-byte-order-marker
+      - id: destroyed-symlinks
+      - id: end-of-file-fixer
+
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.80.0
+    hooks:
+      - id: terraform_fmt
+      - id: terraform_validate
+      - id: terraform_tflint
+        args:
+          - "--args=--enable-rule=terraform_unused_declarations"
+          - "--args=--enable-rule=terraform_naming_convention"
+          - "--args=--enable-rule=terraform_deprecated_index"
+          - "--args=--enable-rule=terraform_comment_syntax"
+          - "--args=--enable-rule=terraform_documented_outputs"
+          - "--args=--enable-rule=terraform_documented_variables"
+          - "--args=--enable-rule=terraform_typed_variables"
+          - "--args=--enable-rule=terraform_deprecated_interpolation"
+          - "--args=--enable-plugin=tps-codestyle"
+      - id: terraform_docs
+        args:
+          - --hook-config=--create-file-if-not-exist=true
+          - --args=--config=.terraform-docs.yml
+  - repo: https://github.com/aquasecurity/tfsec
+    rev: v1.28.1
+    hooks:
+      - id: tfsec
+        args:
+          - "--config-file=.tfsec.yaml"
+          - "--exclude-downloaded-modules"
+  - repo: https://github.com/syntaqx/git-hooks
+    rev: v0.0.18
+    hooks:
+      - id: circleci-config-validate
+      - id: shellcheck
+        additional_dependencies: []
+
+  - repo: https://github.com/dnephin/pre-commit-golang
+    rev: v0.5.1
+    hooks:
+      - id: go-fmt
