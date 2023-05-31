@@ -8,7 +8,7 @@ resource "aws_lambda_function" "this" {
   timeout          = 600
   role             = aws_iam_role.this.arn
   filename         = data.archive_file.this.output_path
-  source_code_hash = filebase64sha256(data.archive_file.this.output_path)
+  source_code_hash = data.archive_file.this.output_base64sha256
 
   environment {
     variables = merge(
