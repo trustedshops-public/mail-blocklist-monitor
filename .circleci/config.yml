@@ -67,7 +67,7 @@ workflows:
             - test
       - semantic-release:
           context:
-            - github-release
+            - semantic-release
           requires:
             - build-monitor
           filters:
