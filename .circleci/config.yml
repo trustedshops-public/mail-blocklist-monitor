@@ -44,7 +44,6 @@ jobs:
       - run:
           name: Build binary for module
           command: |
-            cd monitor/
             make build-multiplatform
       - persist_to_workspace:
           root: ~/project/
