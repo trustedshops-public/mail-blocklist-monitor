@@ -1,11 +1,11 @@
 package exporter
 
 import (
-	"com.trustedshops/mail-blocklist-monitor/pkg/dns"
-	"com.trustedshops/mail-blocklist-monitor/pkg/util"
 	"context"
 	"fmt"
 	log "github.com/sirupsen/logrus"
+	"github.com/trustedshops-public/mail-blocklist-monitor/pkg/dns"
+	"github.com/trustedshops-public/mail-blocklist-monitor/pkg/util"
 	"reflect"
 	"strings"
 )

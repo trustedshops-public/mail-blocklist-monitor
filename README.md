@@ -1,8 +1,9 @@
-terraform-mail-blocklist-monitor
+mail-blocklist-monitor
 ===
-[![Pre-Commit Hooks](https://img.shields.io/badge/%E2%9A%93%20%20pre--commit-enabled-success)](https://github.com/trustedshops/aws-toolbox/blob/master/docs/docs/pre-commit.md)
+[![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/trustedshops-public/mail-blocklist-monitor/blob/main/LICENSE)
+[![pre-commit](https://img.shields.io/badge/%E2%9A%93%20%20pre--commit-enabled-success)](https://pre-commit.com/)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/trustedshops-public/mail-blocklist-monitor/tree/main.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/trustedshops-public/mail-blocklist-monitor/tree/main)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/trustedshops/terraform-mail-blocklist-monitor/tree/main.svg?style=shield&circle-token=2ee4a116a1b54be2e0a96d0d9d78a49e29a5ddfd)](https://dl.circleci.com/status-badge/redirect/gh/trustedshops/terraform-mail-blocklist-monitor/tree/main)
 
 Monitor the reputation of your mail server IPs with ease.
 
@@ -21,7 +22,7 @@ Monitor the reputation of your mail server IPs with ease.
 ```hcl
 # Create lambda resources
 module "monitor" {
-  source = "github.com/trustedshops/terraform-mail-blocklist-monitor//terraform/modules/lambda?ref=version"
+  source = "github.com/trustedshops-public/mail-blocklist-monitor//terraform/modules/lambda?ref=<version>"
 
   environment_variables = {
     LOG_LEVEL                          = "INFO"
@@ -37,7 +38,7 @@ module "monitor" {
 
 # Execute lambda every day
 module "cron" {
-  source               = "github.com/trustedshops/terraform-mail-blocklist-monitor//terraform/modules/cron?ref=version"
+  source               = "github.com/trustedshops-public/mail-blocklist-monitor//terraform/modules/cron?ref=<version>"
   lambda_arn           = module.monitor.lambda_arn
   lambda_function_name = module.monitor.lambda_function_name
 }
@@ -48,7 +49,7 @@ module "cron" {
 ### Standalone
 
 1. Download the latest binary for your supported platform
-   from [GitHub releases](https://github.com/trustedshops/terraform-mail-blocklist-monitor/releases)
+   from [GitHub releases](https://github.com/trustedshops-public/mail-blocklist-monitor/releases)
 2. Configure the monitor using environment variables (see [monitor/README.md](./monitor/README.md#configuration)) for
    more details
     1. Make sure `ENVIRONMENT` is set to `standalone`
@@ -79,6 +80,6 @@ create a PR or fork to customize to match your demands.
 
 | Name       | Version |
 |:-----------|:--------|
-| Go         | 1.16+   |
+| Go         | 1.20+   |
 | terraform  | 1.3+    |
 | pre-commit | *       |

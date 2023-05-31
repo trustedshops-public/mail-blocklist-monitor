@@ -1,9 +1,9 @@
 package processing
 
 import (
-	"com.trustedshops/mail-blocklist-monitor/pkg/dns"
 	"github.com/gammazero/workerpool"
 	log "github.com/sirupsen/logrus"
+	"github.com/trustedshops-public/mail-blocklist-monitor/pkg/dns"
 	"sort"
 	"strings"
 )

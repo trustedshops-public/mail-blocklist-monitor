@@ -1,9 +1,9 @@
 package exporter
 
 import (
-	"com.trustedshops/mail-blocklist-monitor/pkg/dns"
 	"context"
 	"fmt"
+	"github.com/trustedshops-public/mail-blocklist-monitor/pkg/dns"
 	"os"
 	"text/tabwriter"
 )

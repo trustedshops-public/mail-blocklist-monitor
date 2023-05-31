@@ -1,11 +1,11 @@
 package exporter
 
 import (
-	"com.trustedshops/mail-blocklist-monitor/pkg/dns"
 	"context"
 	"fmt"
 	"github.com/PagerDuty/go-pagerduty"
 	log "github.com/sirupsen/logrus"
+	"github.com/trustedshops-public/mail-blocklist-monitor/pkg/dns"
 	"strconv"
 )
 

@@ -1,8 +1,8 @@
 package blocklist_contributor
 
 import (
-	"com.trustedshops/mail-blocklist-monitor/pkg/util"
 	"fmt"
+	"github.com/trustedshops-public/mail-blocklist-monitor/pkg/util"
 	"sort"
 	"strings"
 )

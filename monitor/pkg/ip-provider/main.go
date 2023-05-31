@@ -1,10 +1,10 @@
 package ip_provider
 
 import (
-	"com.trustedshops/mail-blocklist-monitor/pkg/util"
 	"context"
 	"fmt"
 	log "github.com/sirupsen/logrus"
+	"github.com/trustedshops-public/mail-blocklist-monitor/pkg/util"
 	"strings"
 )
 

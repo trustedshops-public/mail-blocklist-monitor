@@ -1,15 +1,15 @@
 package cmd
 
 import (
-	"com.trustedshops/mail-blocklist-monitor/pkg/blocklist-contributor"
-	"com.trustedshops/mail-blocklist-monitor/pkg/dns"
-	"com.trustedshops/mail-blocklist-monitor/pkg/exporter"
-	ipprovider "com.trustedshops/mail-blocklist-monitor/pkg/ip-provider"
-	"com.trustedshops/mail-blocklist-monitor/pkg/processing"
-	"com.trustedshops/mail-blocklist-monitor/pkg/util"
 	"context"
 	"github.com/aws/aws-lambda-go/lambda"
 	log "github.com/sirupsen/logrus"
+	"github.com/trustedshops-public/mail-blocklist-monitor/pkg/blocklist-contributor"
+	"github.com/trustedshops-public/mail-blocklist-monitor/pkg/dns"
+	"github.com/trustedshops-public/mail-blocklist-monitor/pkg/exporter"
+	ipprovider "github.com/trustedshops-public/mail-blocklist-monitor/pkg/ip-provider"
+	"github.com/trustedshops-public/mail-blocklist-monitor/pkg/processing"
+	"github.com/trustedshops-public/mail-blocklist-monitor/pkg/util"
 )
 
 func init() {

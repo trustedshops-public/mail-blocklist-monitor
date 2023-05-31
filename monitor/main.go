@@ -1,8 +1,8 @@
 package main
 
 import (
-	"com.trustedshops/mail-blocklist-monitor/cmd"
-	"com.trustedshops/mail-blocklist-monitor/pkg/util"
+	"github.com/trustedshops-public/mail-blocklist-monitor/cmd"
+	"github.com/trustedshops-public/mail-blocklist-monitor/pkg/util"
 )
 
 func main() {

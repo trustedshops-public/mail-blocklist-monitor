@@ -35,7 +35,7 @@
       "@semantic-release/github",
       {
         "path": "semantic-release",
-        "name": "trustedshops/terraform-mail-blocklist-monitor",
+        "name": "trustedshops-public/mail-blocklist-monitor",
         "assets": [
           {
             "path": "monitor/dist/monitor-linux-amd64"
