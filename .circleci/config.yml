@@ -12,7 +12,7 @@ executors:
 jobs:
   test:
     executor: go
-    working_directory: ~/project/monitor/monitor
+    working_directory: ~/project/monitor/monitor/monitor
     steps:
       - checkout
       - go/mod-download-cached
