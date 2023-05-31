@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/trustedshops-public/mail-blocklist-monitor/compare/1.0.0...1.0.1) (2023-05-31)
+
+
+### Bug Fixes
+
+* Fix file checksum calculation ([ab846bf](https://github.com/trustedshops-public/mail-blocklist-monitor/commit/ab846bfcbe04395af3fc401435b49c499c0c73a9))
+
 ## 1.0.0 (2023-05-31)
 
 
