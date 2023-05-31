@@ -1,0 +1,3 @@
+* @trustedshops-public/terraform @trustedshops-public/terraform
+terraform/* @trustedshops-public/terraform
+monitor/* @trustedshops-public/golang
