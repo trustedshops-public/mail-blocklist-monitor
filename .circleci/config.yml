@@ -12,38 +12,41 @@ executors:
 jobs:
   test:
     executor: go
+    working_directory: ~/project/monitor
     steps:
-      - checkout
+      - checkout:
+          path: ..
+      - go/mod-download-cached
       - run:
           name: Run tests
           command: |
-            cd monitor/
             gotestsum --junitfile unit-tests.xml
             make save-coverage-report
       - run:
           name: Get test coverage
           command: |
-            cd monitor/
             go test -race -coverprofile=coverage.txt -covermode=atomic  -v ./...
             # TODO Enable codecov
             # bash <(curl -s https://codecov.io/bash)
       - store_test_results:
-          path: monitor/unit-tests.xml
+          path: unit-tests.xml
       - store_artifacts:
-          path: monitor/unit-tests.xml
+          path: unit-tests.xml
       - store_artifacts:
-          path: monitor/coverage.html
+          path: coverage.html
   build-monitor:
     executor: go
+    working_directory: ~/project/monitor
     steps:
-      - checkout
+      - checkout:
+          path: ..
+      - go/mod-download-cached
       - run:
           name: Build binary for module
           command: |
-            cd monitor/
             make build-multiplatform
       - persist_to_workspace:
-          root: .
+          root: ~/project/
           paths:
             - monitor/dist/
 
@@ -52,7 +55,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: .
+          at: ~/project/
       - semantic-release/install:
           additional_packages: "@semantic-release/exec@6.0.3"
       - semantic-release/execute
@@ -72,4 +75,4 @@ workflows:
             - build-monitor
           filters:
             branches:
-              only: [ main ]
+              only: [main]
