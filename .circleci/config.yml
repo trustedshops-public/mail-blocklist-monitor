@@ -64,6 +64,7 @@ jobs:
       - run:
           name: Run terratest
           command: |
+            source $BASH_ENV
             go test
   semantic-release:
     executor: semantic-release/default
