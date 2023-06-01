@@ -29,8 +29,6 @@ func checkSyncInvocation(t *testing.T, lambdaClient *lambda.Client, functionName
 }
 
 func TestTerraformModuleLambda_Cron(t *testing.T) {
-	t.Parallel()
-
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
 		TerraformDir: "lambda-cron",
 		Vars:         map[string]interface{}{},
