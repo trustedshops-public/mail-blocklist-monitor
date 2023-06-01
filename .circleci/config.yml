@@ -60,16 +60,11 @@ jobs:
       - go/mod-download-cached
       - aws-cli/setup:
           role_arn: $AWS_WEB_IDENTITY_ROLE_ARN
-      - run:
-          name: Propagate env vars
-          command: |
-            source $BASH_ENV
       - terraform-utils/install_tfenv
-      - go/test:
-          covermode: atomic
-          failfast: true
-          race: false
-          parallel: "2"
+      - run:
+          name: Run terratest
+          command: |
+            go test
   semantic-release:
     executor: semantic-release/default
     steps:
