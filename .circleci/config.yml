@@ -4,6 +4,8 @@ orbs:
   semantic-release: trustedshops-public/semantic-release@5.0.0
   go: circleci/go@1.7.3
   codecov: codecov/codecov@3.2.5
+  aws-cli: circleci/aws-cli@4.0.0
+  terraform-utils: trustedshops-public/terraform-utils@3.0.0
 
 executors:
   go:
@@ -11,7 +13,7 @@ executors:
       - image: cimg/go:1.20
 
 jobs:
-  test:
+  test-monitor:
     executor: go
     working_directory: ~/project/monitor
     steps:
@@ -49,7 +51,23 @@ jobs:
           root: ~/project/
           paths:
             - monitor/dist/
-
+  test-terraform-module:
+    executor: go
+    working_directory: ~/project/terraform/tests
+    steps:
+      - checkout:
+          path: ../..
+      - attach_workspace:
+          at: ~/project/
+      - go/mod-download-cached
+      - aws-cli/setup:
+          role_arn: $AWS_WEB_IDENTITY_ROLE_ARN
+      - terraform-utils/install_tfenv
+      - run:
+          name: Run terratest
+          command: |
+            source $BASH_ENV
+            go test
   semantic-release:
     executor: semantic-release/default
     steps:
@@ -64,15 +82,21 @@ workflows:
   version: 2
   continuous:
     jobs:
-      - test
-      - build-monitor:
+      - build-monitor
+      - test-terraform-module:
+          context: terratest
           requires:
-            - test
+            - build-monitor
+      - test-monitor:
+          requires:
+            - build-monitor
       - semantic-release:
           context:
             - semantic-release
           requires:
             - build-monitor
+            - test-monitor
+            - test-terraform-module
           filters:
             branches:
               only: [main]

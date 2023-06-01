@@ -6,8 +6,6 @@ import (
 )
 
 func TestTerraformModulePagerDutyIntegration(t *testing.T) {
-	t.Parallel()
-
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
 		TerraformDir: "pagerduty_integration",
 		Vars:         map[string]interface{}{},
