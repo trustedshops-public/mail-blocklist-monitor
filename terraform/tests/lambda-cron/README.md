@@ -10,7 +10,9 @@
 
 #### Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_suffix"></a> [suffix](#input\_suffix) | Suffix to append to resources | `string` | n/a | yes |
 
 #### Outputs
 

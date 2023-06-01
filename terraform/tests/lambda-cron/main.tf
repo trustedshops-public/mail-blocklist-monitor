@@ -24,11 +24,17 @@ module "lambda" {
     IP_PROVIDER_SES_REGIONS       = "eu-central-1"
   }
 
-  function_name = "mail-blocklist-monitor"
+  function_name = "mail-blocklist-monitor-${var.suffix}"
+  iam_role_name = "mail-blocklist-monitor-${var.suffix}"
 }
 
 module "cron" {
   source               = "../../modules/cron"
   lambda_arn           = module.lambda.lambda_arn
   lambda_function_name = module.lambda.lambda_function_name
+}
+
+variable "suffix" {
+  type        = string
+  description = "Suffix to append to resources"
 }
