@@ -57,6 +57,8 @@ jobs:
     steps:
       - checkout:
           path: ../..
+      - attach_workspace:
+          at: ~/project/
       - go/mod-download-cached
       - aws-cli/setup:
           role_arn: $AWS_WEB_IDENTITY_ROLE_ARN
@@ -80,17 +82,20 @@ workflows:
   version: 2
   continuous:
     jobs:
+      - build-monitor
       - test-terraform-module:
           context: terratest
-      - test-monitor
-      - build-monitor:
           requires:
-            - test-monitor
+            - build-monitor
+      - test-monitor:
+          requires:
+            - build-monitor
       - semantic-release:
           context:
             - semantic-release
           requires:
             - build-monitor
+            - test-monitor
             - test-terraform-module
           filters:
             branches:
