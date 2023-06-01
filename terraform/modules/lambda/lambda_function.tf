@@ -9,6 +9,7 @@ resource "aws_lambda_function" "this" {
   role             = aws_iam_role.this.arn
   filename         = data.archive_file.this.output_path
   source_code_hash = data.archive_file.this.output_base64sha256
+  kms_key_arn      = var.kms_key_arn
 
   environment {
     variables = merge(
