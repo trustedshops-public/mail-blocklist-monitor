@@ -22,7 +22,10 @@ func checkSyncInvocation(t *testing.T, lambdaClient *lambda.Client, functionName
 			Payload:      payload,
 		},
 	)
-	assert.Nil(t, err)
+
+	if err != nil {
+		t.Fatal(err)
+	}
 }
 
 func TestTerraformModuleLambda_Cron(t *testing.T) {
