@@ -5,6 +5,7 @@ orbs:
   go: circleci/go@1.7.3
   codecov: codecov/codecov@3.2.5
   aws-cli: circleci/aws-cli@4.0.0
+  terraform-utils: trustedshops-public/terraform-utils@3.0.0
 
 executors:
   go:
@@ -59,6 +60,7 @@ jobs:
       - go/mod-download-cached
       - aws-cli/setup:
           role_arn: $AWS_WEB_IDENTITY_ROLE_ARN
+      - terraform-utils/install_tfenv
       - go/test:
           covermode: atomic
           failfast: true
