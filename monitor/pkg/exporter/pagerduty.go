@@ -79,43 +79,45 @@ func (p PagerDutyExporter) aggregateByIP(results dns.LookupResults) map[string]d
 // Export PagerDuty events
 func (p PagerDutyExporter) Export(ctx context.Context, results *dns.LookupResults) error {
 	groupByList, _ := strconv.ParseBool(*getEnvConfig(p, "group_by_list", "false"))
-	var messages []string
 
 	// Two possibilities
 	// Grouping
 	// - One alert per IP
-	// NO Grouping
+	// No Grouping
 	// One alert per IP and block list
-
+	var exporter func(results *dns.LookupResults) error
 	if groupByList {
-		aggregated := p.aggregateByIP(*results)
-
-		for ip, aggregatedResults := range aggregated {
-			var links []interface{}
-
-			for _, result := range aggregatedResults {
-				links = append(links, createPagerDutyLink(result.IP+" - "+result.List+" - "+result.Details, result.Details))
-			}
-
-			if err := p.triggerPagerDutyIncident(fmt.Sprintf("%s found on %d mail blocklists\n", ip, len(aggregatedResults)), aggregatedResults); err != nil {
-				return err
-			}
-		}
+		exporter = p.exportGroupedByList
 	} else {
-		for _, result := range *results {
-			msg := fmt.Sprintf("%s found on blocklist %s", result.IP, result.List)
-			if err := p.triggerPagerDutyIncident(msg, dns.LookupResults{result}); err != nil {
-				return err
-			}
-		}
+		exporter = p.exportForEachFinding
 	}
 
-	for _, message := range messages {
-		log.Debug("Send event to pagerduty message=", message)
-		if err := p.triggerPagerDutyIncident(message, *results); err != nil {
+	return exporter(results)
+}
+
+func (p PagerDutyExporter) exportForEachFinding(results *dns.LookupResults) error {
+	for _, result := range *results {
+		msg := fmt.Sprintf("%s found on blocklist %s", result.IP, result.List)
+		if err := p.triggerPagerDutyIncident(msg, dns.LookupResults{result}); err != nil {
 			return err
 		}
 	}
+	return nil
+}
 
+func (p PagerDutyExporter) exportGroupedByList(results *dns.LookupResults) error {
+	aggregated := p.aggregateByIP(*results)
+
+	for ip, aggregatedResults := range aggregated {
+		var links []interface{}
+
+		for _, result := range aggregatedResults {
+			links = append(links, createPagerDutyLink(result.IP+" - "+result.List+" - "+result.Details, result.Details))
+		}
+
+		if err := p.triggerPagerDutyIncident(fmt.Sprintf("%s found on %d mail blocklists\n", ip, len(aggregatedResults)), aggregatedResults); err != nil {
+			return err
+		}
+	}
 	return nil
 }
