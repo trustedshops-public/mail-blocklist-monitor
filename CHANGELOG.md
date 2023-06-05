@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/trustedshops-public/mail-blocklist-monitor/compare/1.0.1...1.0.2) (2023-06-05)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/sirupsen/logrus to v1.9.3 ([#3](https://github.com/trustedshops-public/mail-blocklist-monitor/issues/3)) ([5415f7a](https://github.com/trustedshops-public/mail-blocklist-monitor/commit/5415f7aace7a20f4b2bbb1ef7bed2c94da46df49))
+* **deps:** update module github.com/stretchr/testify to v1.8.4 ([#4](https://github.com/trustedshops-public/mail-blocklist-monitor/issues/4)) ([0240590](https://github.com/trustedshops-public/mail-blocklist-monitor/commit/024059014641aa2f697895f6f498868db14c96b4))
+
 ## [1.0.1](https://github.com/trustedshops-public/mail-blocklist-monitor/compare/1.0.0...1.0.1) (2023-05-31)
 
 
