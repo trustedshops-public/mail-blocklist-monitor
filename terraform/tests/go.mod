@@ -5,7 +5,7 @@ go 1.20
 require (
 	github.com/aws/aws-sdk-go-v2 v1.18.0
 	github.com/aws/aws-sdk-go-v2/config v1.18.25
-	github.com/aws/aws-sdk-go-v2/service/lambda v1.34.1
+	github.com/aws/aws-sdk-go-v2/service/lambda v1.35.0
 	github.com/gruntwork-io/terratest v0.43.0
 	github.com/stretchr/testify v1.8.4
 )
