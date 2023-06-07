@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  semantic-release: trustedshops-public/semantic-release@5.0.0
+  semantic-release: trustedshops-public/semantic-release@5.1.0
   go: circleci/go@1.7.3
   codecov: codecov/codecov@3.2.5
   aws-cli: circleci/aws-cli@4.0.0
@@ -68,15 +68,6 @@ jobs:
           command: |
             source $BASH_ENV
             go test
-  semantic-release:
-    executor: semantic-release/default
-    steps:
-      - checkout
-      - attach_workspace:
-          at: ~/project/
-      - semantic-release/install:
-          additional_packages: "@semantic-release/exec@6.0.3"
-      - semantic-release/execute
 
 workflows:
   version: 2
@@ -90,7 +81,11 @@ workflows:
       - test-monitor:
           requires:
             - build-monitor
-      - semantic-release:
+      - semantic-release/with_existing_config:
+          name: semantic-release
+          additional_packages: "@semantic-release/exec@6.0.3"
+          attach_workspace: true
+          workspace_root: ~/project
           context:
             - semantic-release
           requires:
