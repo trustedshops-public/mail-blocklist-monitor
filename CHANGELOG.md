@@ -1,3 +1,12 @@
+## [1.0.5](https://github.com/trustedshops-public/mail-blocklist-monitor/compare/1.0.4...1.0.5) (2023-06-16)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/aws/aws-sdk-go-v2/config to v1.18.27 ([#11](https://github.com/trustedshops-public/mail-blocklist-monitor/issues/11)) ([efa173b](https://github.com/trustedshops-public/mail-blocklist-monitor/commit/efa173bf18aeed8ee2856d81f4b7f58305a4ebdb))
+* **deps:** update module github.com/aws/aws-sdk-go-v2/service/lambda to v1.35.2 ([#12](https://github.com/trustedshops-public/mail-blocklist-monitor/issues/12)) ([da9330d](https://github.com/trustedshops-public/mail-blocklist-monitor/commit/da9330d25af4cb9349e158bb13739c4f8f92c243))
+* **deps:** update module github.com/aws/aws-sdk-go-v2/service/sesv2 to v1.18.2 ([#13](https://github.com/trustedshops-public/mail-blocklist-monitor/issues/13)) ([13e729c](https://github.com/trustedshops-public/mail-blocklist-monitor/commit/13e729cc81e4071333c4d29b5d553a97aee157e2))
+
 ## [1.0.4](https://github.com/trustedshops-public/mail-blocklist-monitor/compare/1.0.3...1.0.4) (2023-06-15)
 
 
