@@ -6,7 +6,7 @@ require (
 	github.com/PagerDuty/go-pagerduty v1.7.0
 	github.com/aws/aws-lambda-go v1.41.0
 	github.com/aws/aws-sdk-go-v2/config v1.18.27
-	github.com/aws/aws-sdk-go-v2/service/sesv2 v1.18.1
+	github.com/aws/aws-sdk-go-v2/service/sesv2 v1.18.2
 	github.com/gammazero/workerpool v1.1.3
 	github.com/sirupsen/logrus v1.9.3
 )
