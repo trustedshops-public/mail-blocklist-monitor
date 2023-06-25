@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/trustedshops-public/mail-blocklist-monitor/compare/1.0.8...1.0.9) (2023-06-25)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/gruntwork-io/terratest to v0.43.4 ([#19](https://github.com/trustedshops-public/mail-blocklist-monitor/issues/19)) ([a16a74d](https://github.com/trustedshops-public/mail-blocklist-monitor/commit/a16a74d15712f0908c95adf7fc5a413fe56cca20))
+
 ## [1.0.8](https://github.com/trustedshops-public/mail-blocklist-monitor/compare/1.0.7...1.0.8) (2023-06-21)
 
 
