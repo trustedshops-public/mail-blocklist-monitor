@@ -246,6 +246,8 @@ github.com/aws/aws-sdk-go-v2/service/lambda v1.35.2 h1:MeukRLx5lbfObw2gH2FePNJPC
 github.com/aws/aws-sdk-go-v2/service/lambda v1.35.2/go.mod h1:Q8zQi5nZpjUF/H55dKEpKfEvFWJkgZzjjqvDb2AR5b4=
 github.com/aws/aws-sdk-go-v2/service/lambda v1.36.0 h1:pE6cEkDangeOnhhaBOKQAYHTyFlKbUX7qF32sApToNE=
 github.com/aws/aws-sdk-go-v2/service/lambda v1.36.0/go.mod h1:Q8zQi5nZpjUF/H55dKEpKfEvFWJkgZzjjqvDb2AR5b4=
+github.com/aws/aws-sdk-go-v2/service/lambda v1.37.0 h1:xzyM5ZR9kZW0/Bkw5EiihOy6B+BYclp5K+yb6OHjc7s=
+github.com/aws/aws-sdk-go-v2/service/lambda v1.37.0/go.mod h1:Q8zQi5nZpjUF/H55dKEpKfEvFWJkgZzjjqvDb2AR5b4=
 github.com/aws/aws-sdk-go-v2/service/sso v1.12.10 h1:UBQjaMTCKwyUYwiVnUt6toEJwGXsLBI6al083tpjJzY=
 github.com/aws/aws-sdk-go-v2/service/sso v1.12.10/go.mod h1:ouy2P4z6sJN70fR3ka3wD3Ro3KezSxU6eKGQI2+2fjI=
 github.com/aws/aws-sdk-go-v2/service/sso v1.12.11 h1:cNrMc266RsZJ8V1u1OQQONKcf9HmfxQFqgcpY7ZJBhY=
