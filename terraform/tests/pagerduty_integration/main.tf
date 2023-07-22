@@ -2,7 +2,7 @@ terraform {
   required_providers {
     pagerduty = {
       source  = "PagerDuty/pagerduty"
-      version = "2.15.1"
+      version = "2.15.2"
     }
   }
   required_version = ">= 1.3"
