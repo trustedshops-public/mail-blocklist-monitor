@@ -1,3 +1,10 @@
+## [1.0.17](https://github.com/trustedshops-public/mail-blocklist-monitor/compare/1.0.16...1.0.17) (2023-10-09)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/aws/aws-sdk-go-v2/service/sesv2 to v1.20.2 ([30a1e99](https://github.com/trustedshops-public/mail-blocklist-monitor/commit/30a1e99593ddcbfd3cd01a8e4948e10ab3029587))
+
 ## [1.0.16](https://github.com/trustedshops-public/mail-blocklist-monitor/compare/1.0.15...1.0.16) (2023-07-27)
 
 
