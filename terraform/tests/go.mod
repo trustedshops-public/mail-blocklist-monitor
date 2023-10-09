@@ -1,12 +1,14 @@
 module github.com/trustedshops-public/mail-blocklist-monitor/tests
 
-go 1.20
+go 1.21
+
+toolchain go1.21.2
 
 require (
 	github.com/aws/aws-sdk-go-v2 v1.19.0
 	github.com/aws/aws-sdk-go-v2/config v1.18.27
 	github.com/aws/aws-sdk-go-v2/service/lambda v1.37.1
-	github.com/gruntwork-io/terratest v0.43.10
+	github.com/gruntwork-io/terratest v0.46.0
 	github.com/stretchr/testify v1.8.4
 )
 
