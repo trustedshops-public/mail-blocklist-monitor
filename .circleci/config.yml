@@ -2,15 +2,15 @@ version: 2.1
 
 orbs:
   semantic-release: trustedshops-public/semantic-release@5.1.1
-  go: circleci/go@1.7.3
-  codecov: codecov/codecov@3.2.5
-  aws-cli: circleci/aws-cli@4.0.0
+  go: circleci/go@1.9.0
+  codecov: codecov/codecov@3.3.0
+  aws-cli: circleci/aws-cli@4.1.2
   terraform-utils: trustedshops-public/terraform-utils@3.0.0
 
 executors:
   go:
     docker:
-      - image: cimg/go:1.20
+      - image: cimg/go:1.21
 
 jobs:
   test-monitor:
