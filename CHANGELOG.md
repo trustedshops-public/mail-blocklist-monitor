@@ -1,3 +1,10 @@
+## [1.0.18](https://github.com/trustedshops-public/mail-blocklist-monitor/compare/1.0.17...1.0.18) (2023-11-17)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/aws/aws-sdk-go-v2/service/lambda to v1.40.0 ([#32](https://github.com/trustedshops-public/mail-blocklist-monitor/issues/32)) ([a569761](https://github.com/trustedshops-public/mail-blocklist-monitor/commit/a56976172f684baab6f6359798a97f783fe24b6a))
+
 ## [1.0.17](https://github.com/trustedshops-public/mail-blocklist-monitor/compare/1.0.16...1.0.17) (2023-10-09)
 
 
