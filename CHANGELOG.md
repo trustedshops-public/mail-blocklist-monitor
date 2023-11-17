@@ -1,3 +1,10 @@
+## [1.0.20](https://github.com/trustedshops-public/mail-blocklist-monitor/compare/1.0.19...1.0.20) (2023-11-17)
+
+
+### Bug Fixes
+
+* **deps:** update terraform pagerduty to v3 ([#42](https://github.com/trustedshops-public/mail-blocklist-monitor/issues/42)) ([cbc69ac](https://github.com/trustedshops-public/mail-blocklist-monitor/commit/cbc69ac5ffbfc460f4ba6d7592bdcc5e94080a36))
+
 ## [1.0.19](https://github.com/trustedshops-public/mail-blocklist-monitor/compare/1.0.18...1.0.19) (2023-11-17)
 
 
