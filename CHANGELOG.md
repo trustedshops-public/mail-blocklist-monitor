@@ -1,3 +1,10 @@
+## [1.0.23](https://github.com/trustedshops-public/mail-blocklist-monitor/compare/1.0.22...1.0.23) (2024-02-15)
+
+
+### Bug Fixes
+
+* **deps:** update minor go packages ([10d33b4](https://github.com/trustedshops-public/mail-blocklist-monitor/commit/10d33b4fd8ecc3d948b3458680433b44368a71ec))
+
 ## [1.0.22](https://github.com/trustedshops-public/mail-blocklist-monitor/compare/1.0.21...1.0.22) (2024-01-24)
 
 
