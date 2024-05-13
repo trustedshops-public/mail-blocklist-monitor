@@ -44,7 +44,7 @@ repos:
           - --hook-config=--create-file-if-not-exist=true
           - --args=--config=.terraform-docs.yml
   - repo: https://github.com/aquasecurity/tfsec
-    rev: v1.28.5
+    rev: v1.28.6
     hooks:
       - id: tfsec
         args:
