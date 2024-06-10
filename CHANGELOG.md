@@ -1,3 +1,10 @@
+## [1.0.24](https://github.com/trustedshops-public/mail-blocklist-monitor/compare/1.0.23...1.0.24) (2024-06-10)
+
+
+### Bug Fixes
+
+* replace deprecated go1.x runtime with provided.al2023 ([11d4b44](https://github.com/trustedshops-public/mail-blocklist-monitor/commit/11d4b4430920e4f5f5bf7400bd44a530c9b8b9b9))
+
 ## [1.0.23](https://github.com/trustedshops-public/mail-blocklist-monitor/compare/1.0.22...1.0.23) (2024-02-15)
 
 
