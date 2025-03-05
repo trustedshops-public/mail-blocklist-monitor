@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   semantic-release: trustedshops-public/semantic-release@5.1.1
-  go: circleci/go@1.9.0
+  go: circleci/go@2.2.5
   codecov: codecov/codecov@3.3.0
   aws-cli: circleci/aws-cli@4.1.3
   terraform-utils: trustedshops-public/terraform-utils@3.0.0
