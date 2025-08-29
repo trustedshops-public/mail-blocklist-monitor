@@ -1,3 +1,10 @@
+## [1.0.26](https://github.com/trustedshops-public/mail-blocklist-monitor/compare/1.0.25...1.0.26) (2025-08-29)
+
+
+### Bug Fixes
+
+* fixed BLOCKLIST_CONTRIBUTOR_SILENCER_LISTS not having any effect ([69eca50](https://github.com/trustedshops-public/mail-blocklist-monitor/commit/69eca50a508866758d9fde804c460c6d6f3b4d85))
+
 ## [1.0.25](https://github.com/trustedshops-public/mail-blocklist-monitor/compare/1.0.24...1.0.25) (2024-06-10)
 
 
