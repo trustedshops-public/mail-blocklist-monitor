@@ -2,9 +2,10 @@ package blocklist_contributor
 
 import (
 	"fmt"
-	"github.com/trustedshops-public/mail-blocklist-monitor/pkg/util"
 	"sort"
 	"strings"
+
+	"github.com/trustedshops-public/mail-blocklist-monitor/pkg/util"
 )
 
 const PriorityAdd = 0
@@ -24,6 +25,7 @@ var _contributor []BlocklistContributor
 
 func registerProvider(i BlocklistContributor) {
 	_contributor = append(_contributor, i)
+	_contributor = append(_contributor, SilencerBlocklistContributor{})
 }
 
 // getEnvConfig loads the env variable in format BLOCKLIST_CONTRIBUTOR_<<PROVIDERNAME>>_<<KEY>>
